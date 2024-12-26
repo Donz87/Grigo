@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Grigo - English lessons" />
+    <link rel="icon" type="image/png" href="./assets/images/logo.png" />
+    <title>Grigo Academy</title>
+    <script type="module" src="./js/main.js"></script>
+  </head>
+  <body>
+    <div class="mx-auto p-0" id="container">
+      <header
+        class="position-fixed start-0 end-0 top-0 row justify-content-between justify-item-end py-2 px-4 flex-nowrap my-auto"
+      >
+        <a href="/" class="col position-relative">
+          <img
+            src="./assets/images/logo.png"
+            class="position-absolute end-0"
+            alt="lgo"
+          />
+        </a>
+        <nav class="nav-horizontal col-auto col-xxl-5">
+          <ul
+            class="nav nav-underline justify-content-between flex-nowrap gap-xxl-3"
+          >
+            <li class="nav-item">
+              <a href="#banner" class="nav-link active" aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#prices" class="nav-link">Prices</a>
+            </li>
+            <li class="nav-item"><a href="#blog" class="nav-link">Blog</a></li>
+            <li class="nav-item">
+              <a href="#questions" class="nav-link">Questions</a>
+            </li>
+            <li class="nav-item">
+              <a href="#reviews" class="nav-link">Reviews</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="col px-3 d-flex flex-nowrap align-items-center">
+          <i class="bi bi-list d-block d-lg-none ms-auto fs-2"></i>
+
+          <a href="#banner" class="btn btn-outline-primary mx-3 rounded-3">
+            Записаться на урок
+          </a>
+          <div class="switcher d-lg-flex flex-nowrap px-3">
+            <span data-lang="ru" class="active">Ru</span>
+            <span>/</span>
+            <span data-lang="en">En</span>
+            <span>/</span>
+            <span data-lang="fr">Fr</span>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section id="banner">
+          <div class="row position-relative">
+            <button
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              class="order-btn-mob btn btn-primary d-lg-none rounded-3 py-3"
+            >
+              Записаться
+            </button>
+            <div class="banner-block col p-3 p-lg-5">
+              <div class="banner-block-text">
+                <h1>Lorem ipsum dolor sit amet, consectetur</h1>
+                <p class="my-4">Consectetur adipiscing elit integer bibendum</p>
+              </div>
+            </div>
+            <div class="banner-block col b-bg p-3 p-lg-5">
+              <img
+                class="position-absolute flag-position"
+                src="./assets/images/banner/flag.png"
+                alt="flag"
+              />
+              <img
+                class="position-absolute hello-position z-1"
+                src="./assets/images/banner/Hello.png"
+                alt="hello"
+              />
+              <div class="wrapper-form d-none d-lg-block">
+                <form id="order-form" class="p-4 rounded-4">
+                  <h2 class="text-center mb-3">Записаться</h2>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label"
+                      >Email or phone number</label
+                    >
+                    <div class="position-relative">
+                      <input
+                        type="email"
+                        class="form-control px-4 py-3 rounded-3"
+                        id="exampleInputEmail1"
+                        aria-describedby="emailHelp"
+                        placeholder="Enter your email"
+                      />
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label"
+                      >Password</label
+                    >
+                    <div class="position-relative">
+                      <input
+                        type="password"
+                        class="form-control px-4 py-3 rounded-3"
+                        id="exampleInputPassword1"
+                        placeholder="Enter your password"
+                      />
+                      <span
+                        class="material-icons toggle-vis-pass toggle-vis-pass-des"
+                        >visibility_off</span
+                      >
+                    </div>
+                  </div>
+
+                  <button
+                    type="submit"
+                    class="btn btn-primary w-100 rounded-3 py-3 mt-3"
+                  >
+                    Записаться на бесплатный пробный урок
+                  </button>
+                  <p class="text-center mt-1">
+                    <a class="text-decoration-none" href="/"
+                      >Forgot your password?</a
+                    >
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="prices">
+          <div class="py-5">
+            <h1 class="text-center my-3 my-md-5">Цены на обучение</h1>
+            <div
+              class="d-none d-lg-flex justify-content-center flex-wrap gap-5 flex-column flex-lg-row"
+            >
+              <div class="card bg-pink rounded-4 border-0 overflow-hidden">
+                <img
+                  src="./assets/images/price/en-9-12.png"
+                  class="card-img-top rounded-4"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title text-center my-3">
+                    Английский для подростков (9-12 классов)
+                  </h5>
+                  <div
+                    class="card-text d-none d-lg-flex justify-content-center"
+                  >
+                    <ul class="card-list">
+                      <li class="d-flex align-items-center">
+                        <i class="bi bi-check me-2"></i>Количество студентов: 6
+                      </li>
+                      <li class="d-flex align-items-center">
+                        <i class="bi bi-check me-2"></i>Минут: 60
+                      </li>
+                      <li class="d-flex align-items-center">
+                        <i class="bi bi-check me-2"></i>Уроков в неделю: 2
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <a href="#" class="btn btn-accent w-75 rounded-4 my-4 py-3"
+                      >8 300 Р/мес</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="card bg-blue rounded-4 border-0 overflow-hidden">
+                <img
+                  src="./assets/images/price/en-prof.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title text-center my-3 px-xxl-2">
+                    Профессиональный английский
+                  </h5>
+                  <div
+                    class="card-text d-none d-lg-flex justify-content-center"
+                  >
+                    <ul class="card-list">
+                      <li class="d-flex align-items-center">
+                        <i class="bi bi-check me-2"></i>Количество студентов: 6
+                      </li>
+                      <li class="d-flex align-items-center">
+                        <i class="bi bi-check me-2"></i>Минут: 60
+                      </li>
+                      <li class="d-flex align-items-center">
+                        <i class="bi bi-check me-2"></i>Уроков в неделю: 2
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <a href="#" class="btn btn-primary w-75 rounded-4 my-4 py-3"
+                      >2 800 Р/мес</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="card bg-pink rounded-4 border-0 overflow-hidden">
+                <img
+                  src="./assets/images/price/en-1-8.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title text-center my-3">
+                    Английский для детей (1-8 классов)
+                  </h5>
+                  <div
+                    class="card-text d-none d-lg-flex justify-content-center"
+                  >
+                    <ul class="card-list">
+                      <li class="d-flex align-items-center">
+                        <i class="bi bi-check me-2"></i>Количество студентов: 6
+                      </li>
+                      <li class="d-flex align-items-center">
+                        <i class="bi bi-check me-2"></i>Минут: 60
+                      </li>
+                      <li class="d-flex align-items-center">
+                        <i class="bi bi-check me-2"></i>Уроков в неделю: 2
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <a href="#" class="btn btn-accent w-75 rounded-4 my-4 py-3"
+                      >7 400 Р/мес</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-mob card d-flex d-lg-none flex-column border-0">
+              <div class="bg-pink rounded-4 border-0 overflow-hidden p-4 mb-3">
+                <div class="row m-0 align-items-center">
+                  <div class="col-5 m-0 p-0">
+                    <img
+                      src="./assets/images/price/en-9-12.png"
+                      class="card-img-top rounded-4 d-block"
+                      alt="lesson"
+                    />
+                  </div>
+                  <div class="card-price col-7 text-center">8 300 Р/мес</div>
+                </div>
+                <h5 class="card-title text-left my-4">
+                  Английский для подростков (9-12 классов)
+                </h5>
+
+                <a href="#" class="btn btn-accent w-100 rounded-4 my-3 py-2"
+                  >Узнать больше</a
+                >
+              </div>
+              <div class="bg-blue rounded-4 border-0 overflow-hidden p-4 mb-3">
+                <div class="row m-0 align-items-center">
+                  <div class="col-5 m-0 p-0">
+                    <img
+                      src="./assets/images/price/en-prof.png"
+                      class="card-img-top rounded-4 d-block"
+                      alt="lesson"
+                    />
+                  </div>
+                  <div class="card-price col-7 text-center">2 800 Р/мес</div>
+                </div>
+                <h5 class="card-title text-left my-4">
+                  Профессиональный английский
+                </h5>
+
+                <a href="#" class="btn btn-primary w-100 rounded-4 my-3 py-2"
+                  >Узнать больше</a
+                >
+              </div>
+              <div class="bg-pink rounded-4 border-0 overflow-hidden p-4 mb-3">
+                <div class="row m-0 align-items-center">
+                  <div class="col-5 m-0 p-0">
+                    <img
+                      src="./assets/images/price/en-1-8.png"
+                      class="card-img-top rounded-4 d-block"
+                      alt="lesson"
+                    />
+                  </div>
+                  <div class="card-price col-7 text-center">7 400 Р/мес</div>
+                </div>
+                <h5 class="card-title text-left my-4">
+                  Английский для детей (1-8 классов)
+                </h5>
+
+                <a href="#" class="btn btn-accent w-100 rounded-4 my-3 py-2"
+                  >Узнать больше</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="reviews">
+          <div class="py-5">
+            <h1 class="text-center my-3 my-md-5">Отзывы</h1>
+            <div
+              id="carouselExampleDark"
+              class="carousel carousel-dark slide mx-auto position-relative rounded-top-5 rounded-lg-0"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                  <div
+                    class="card mb-3 px-2 px-md-5 py-4 border-0 shadow-sm"
+                    style="max-width: 100%"
+                  >
+                    <div class="col d-flex flex-column flex-lg-row g-1">
+                      <div class="col-md-3">
+                        <img
+                          src="./assets/images/reviews/avatar.png"
+                          class="img-fluid rounded-start d-block mx-auto d-lg-inline"
+                          alt="avatar"
+                        />
+                      </div>
+                      <div class="col-md-9">
+                        <div class="card-body">
+                          <h5 class="card-title">Vladimir Svetchuk</h5>
+                          <div class="info">Student</div>
+                          <p
+                            class="card-text my-3 truncate-multiline mx-auto mx-lg-0"
+                          >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Mauris eu semper justo. Etiam venenatis cursus
+                            vulputate. Duis sollicitudin aliquam metus, vel
+                            ullamcorper arcu vulputateLorem ipsum dolor sit
+                            amet, consectetur elit.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                  <div
+                    class="card mb-3 px-2 px-md-5 py-4 border-0 shadow-sm"
+                    style="max-width: 100%"
+                  >
+                    <div class="col d-flex flex-column flex-lg-row g-1">
+                      <div class="col-md-3">
+                        <img
+                          src="./assets/images/reviews/avatar.png"
+                          class="img-fluid rounded-start d-block mx-auto d-lg-inline"
+                          alt="avatar"
+                        />
+                      </div>
+                      <div class="col-md-9">
+                        <div class="card-body">
+                          <h5 class="card-title">Vladimir Svetchuk</h5>
+                          <div class="info">Student</div>
+                          <p
+                            class="card-text my-3 truncate-multiline mx-auto mx-lg-0"
+                          >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Mauris eu semper justo. Etiam venenatis cursus
+                            vulputate. Duis sollicitudin aliquam metus, vel
+                            ullamcorper arcu vulputateLorem ipsum dolor sit
+                            amet, consectetur elit.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div
+                    class="card mb-3 px-2 px-md-5 py-4 border-0 shadow-sm"
+                    style="max-width: 100%"
+                  >
+                    <div class="col d-flex flex-column flex-lg-row g-1">
+                      <div class="col-md-3">
+                        <img
+                          src="./assets/images/reviews/avatar.png"
+                          class="img-fluid rounded-start d-block mx-auto d-lg-inline"
+                          alt="avatar"
+                        />
+                      </div>
+                      <div class="col-md-9">
+                        <div class="card-body">
+                          <h5 class="card-title">Vladimir Svetchuk</h5>
+                          <div class="info">Student</div>
+                          <p
+                            class="card-text my-3 truncate-multiline mx-auto mx-lg-0"
+                          >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Mauris eu semper justo. Etiam venenatis cursus
+                            vulputate. Duis sollicitudin aliquam metus, vel
+                            ullamcorper arcu vulputateLorem ipsum dolor sit
+                            amet, consectetur elit.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleDark"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleDark"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleDark"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
+              </div>
+              <button
+                class="carousel-control-arr carousel-control-prev d-none d-lg-block blue-700"
+                type="button"
+                data-bs-target="#carouselExampleDark"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Предыдущий</span>
+              </button>
+              <button
+                class="carousel-control-arr carousel-control-next d-none d-lg-block"
+                type="button"
+                data-bs-target="#carouselExampleDark"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Следующий</span>
+              </button>
+            </div>
+          </div>
+        </section>
+        <section id="questions">
+          <div>
+            <h1 class="text-center my-3 my-md-5">Часто задаваемые вопросы</h1>
+            <div class="accordion mx-auto" id="accordionExample">
+              <div class="accordion-item mb-3 rounded-3">
+                <h2 class="accordion-header border-0">
+                  <button
+                    class="accordion-button collapsed rounded-3"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="false"
+                    aria-controls="collapseOne"
+                  >
+                    Lorem ipsum dolor sit amet, consectetur adipiscing
+                  </button>
+                </h2>
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <strong>Это тело аккордеона первого элемента.</strong> Оно
+                    отображается по умолчанию, пока плагин свертывания не
+                    добавит соответствующие классы, которые мы используем для
+                    стилизации каждого элемента. Эти классы управляют общим
+                    внешним видом, а также отображением и скрытием с помощью
+                    переходов CSS. Вы можете изменить все это с помощью
+                    собственного CSS или переопределить наши переменные по
+                    умолчанию. Также стоит отметить, что практически любой HTML
+                    может быть помещен в <code>.accordion-body</code>, хотя
+                    переход ограничивает переполнение.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item mb-3 rounded-3">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed rounded-3 truncate"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
+                  >
+                    Lorem ipsum dolor sit amet, consectetur adipiscing
+                  </button>
+                </h2>
+                <div
+                  id="collapseTwo"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <strong>Это тело аккордеона второго элемента.</strong> По
+                    умолчанию он скрыт, пока плагин свертывания не добавит
+                    соответствующие классы, которые мы используем для стилизации
+                    каждого элемента. Эти классы управляют общим внешним видом,
+                    а также отображением и скрытием с помощью переходов CSS. Вы
+                    можете изменить все это с помощью собственного CSS или
+                    переопределить наши переменные по умолчанию. Также стоит
+                    отметить, что практически любой HTML может быть помещен в
+                    <code>.accordion-body</code>, хотя переход ограничивает
+                    переполнение.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item mb-3 rounded-3">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed rounded-3 truncate"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                  >
+                    Lorem ipsum dolor sit amet, consectetur adipiscing
+                  </button>
+                </h2>
+                <div
+                  id="collapseThree"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <strong>Это тело аккордеона третьего элемента.</strong> По
+                    умолчанию оно скрыто, пока плагин свертывания не добавит
+                    соответствующие классы, которые мы используем для стилизации
+                    каждого элемента. Эти классы управляют общим внешним видом,
+                    а также отображением и скрытием с помощью переходов CSS. Вы
+                    можете изменить все это с помощью собственного CSS или
+                    переопределить наши переменные по умолчанию. Также стоит
+                    отметить, что практически любой HTML может быть помещен в
+                    <code>.accordion-body</code>, хотя переход ограничивает
+                    переполнение.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item rounded-3">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed rounded-3 truncate"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                  >
+                    Lorem ipsum dolor sit amet, consectetur adipiscing
+                  </button>
+                </h2>
+                <div
+                  id="collapseThree"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <strong>Это тело аккордеона третьего элемента.</strong> По
+                    умолчанию оно скрыто, пока плагин свертывания не добавит
+                    соответствующие классы, которые мы используем для стилизации
+                    каждого элемента. Эти классы управляют общим внешним видом,
+                    а также отображением и скрытием с помощью переходов CSS. Вы
+                    можете изменить все это с помощью собственного CSS или
+                    переопределить наши переменные по умолчанию. Также стоит
+                    отметить, что практически любой HTML может быть помещен в
+                    <code>.accordion-body</code>, хотя переход ограничивает
+                    переполнение.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="blog">
+          <div class="py-5">
+            <h1 class="text-center my-3 my-md-5">Блог</h1>
+            <div
+              class="d-none d-lg-flex justify-content-center flex-wrap gap-3-percent"
+            >
+              <a
+                href="#blog"
+                class="shadow card bg-white rounded-4 border-0 overflow-hidden text-decoration-none"
+              >
+                <img
+                  src="./assets/images/blog/post-1.png"
+                  class="card-img-top rounded-4"
+                  alt="post"
+                />
+                <div class="card-body px-4 px-xxl-5 card-des"></div>
+              </a>
+
+              <a
+                href="#blog"
+                class="shadow card bg-white rounded-4 border-0 overflow-hidden text-decoration-none"
+              >
+                <img
+                  src="./assets/images/blog/post-2.png"
+                  class="card-img-top"
+                  alt="post"
+                />
+                <div class="card-body px-4 px-xxl-5 card-des"></div>
+              </a>
+
+              <a
+                href="#blog"
+                class="shadow card bg-white rounded-4 border-0 overflow-hidden text-decoration-none"
+              >
+                <img
+                  src="./assets/images/blog/post-3.png"
+                  class="card-img-top"
+                  alt="post"
+                />
+                <div class="card-body px-4 px-xxl-5 card-des"></div>
+              </a>
+            </div>
+            <div
+              id="carouselExampleDark2"
+              class="carousel carousel-dark slide d-lg-none"
+            >
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleDark2"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleDark2"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleDark2"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
+              </div>
+              <div class="shadow carousel-inner rounded-4">
+                <div class="carousel-item active" data-bs-interval="10000">
+                  <div
+                    class="card bg-white rounded-4 border-0 overflow-hidden text-decoration-none"
+                  >
+                    <img
+                      src="./assets/images/blog/post-1.png"
+                      class="card-img-top"
+                      alt="post"
+                    />
+                    <div class="card-body px-4 card-mob"></div>
+                  </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                  <div
+                    class="card bg-white rounded-4 border-0 overflow-hidden text-decoration-none"
+                  >
+                    <img
+                      src="./assets/images/blog/post-2.png"
+                      class="card-img-top"
+                      alt="post"
+                    />
+                    <div class="card-body px-4 card-mob"></div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div
+                    class="card bg-white rounded-4 border-0 overflow-hidden text-decoration-none"
+                  >
+                    <img
+                      src="./assets/images/blog/post-3.png"
+                      class="card-img-top"
+                      alt="post"
+                    />
+                    <div class="card-body px-4 card-mob"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="d-none d-lg-block">
+        <div class="footer-container row">
+          <div class="col-3">
+            <img src="./assets/images/logo-footer.png" alt="logo" />
+          </div>
+
+          <div class="col-9">
+            <nav class="nav-horizontal">
+              <ul class="nav justify-content-start flex-nowrap gap-3">
+                <li class="nav-item">
+                  <a href="#banner" class="nav-link active" aria-current="page"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a href="#prices" class="nav-link">Prices</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#blog" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#questions" class="nav-link">Questions</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#reviews" class="nav-link">Reviews</a>
+                </li>
+                <li>
+                  <a
+                    href="#banner"
+                    class="btn btn-outline-primary mx-3 rounded-3"
+                  >
+                    Записаться на урок
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <div class="mt-5 px-2 mb-3">
+              <p class="mb-1">
+                <a
+                  href="tel:+373-67-74-27-77"
+                  aria-label="Позвонить по номеру +373 67-74-27-77"
+                  >+373 67-74-27-77</a
+                >
+              </p>
+              <p class="mb-1">
+                <a
+                  href="tel:+373-67-74-27-77"
+                  aria-label="Позвонить по номеру +373 67-74-27-77"
+                  >+373 67-74-27-77</a
+                >
+              </p>
+            </div>
+            <div class="px-2">
+              <p class="mb-1 fw-bold">Как нас найти:</p>
+              <p class="mb-1">Московский проспект 18</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Закрыть"
+              ></button>
+            </div>
+            <form id="order-form-2" class="p-4 rounded-4">
+              <h2 class="text-center mb-3">Записаться</h2>
+              <div class="mb-3">
+                <label for="exampleInputEmail2" class="form-label"
+                  >Email or phone number</label
+                >
+                <div class="position-relative">
+                  <input
+                    type="email"
+                    class="form-control px-4 py-3 rounded-3"
+                    id="exampleInputEmail2"
+                    aria-describedby="emailHelp"
+                    placeholder="Enter your email"
+                  />
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword2" class="form-label"
+                  >Password</label
+                >
+                <div class="position-relative">
+                  <input
+                    type="password"
+                    class="form-control px-4 py-3 rounded-3"
+                    id="exampleInputPassword2"
+                    placeholder="Enter your password"
+                  />
+                  <span
+                    class="material-icons toggle-vis-pass toggle-vis-pass-mob"
+                    >visibility_off</span
+                  >
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                class="btn btn-primary w-100 rounded-3 py-3 mt-3"
+              >
+                Записаться
+              </button>
+              <p class="text-center mt-1">
+                <a class="text-decoration-none" href="/"
+                  >Forgot your password?</a
+                >
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar-wrapper">
+        <div class="sidebar px-4 py-5">
+          <div class="d-flex justify-item-end">
+            <span class="material-icons ms-auto">close</span>
+          </div>
+
+          <div class="px-4 py-5">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a href="#banner" class="nav-link" aria-current="page">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="#prices" class="nav-link">Prices</a>
+              </li>
+              <li class="nav-item">
+                <a href="#blog" class="nav-link">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a href="#questions" class="nav-link">Questions</a>
+              </li>
+              <li class="nav-item">
+                <a href="#reviews" class="nav-link">Reviews</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

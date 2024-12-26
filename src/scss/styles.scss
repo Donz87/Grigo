@@ -1,0 +1,655 @@
+$nav-link-color: #464646;
+$nav-underline-link-active-color: #0d6efd;
+
+// Импортировать весь CSS Bootstrap
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+@import "material-icons/iconfont/material-icons.css";
+
+$bg-pink: #fff1f7;
+$bg-blue: #e5f0ff;
+
+/***********
+* GENERAL *
+***********/
+
+@font-face {
+  font-family: "Avenir Next Cyr";
+  src: url("../assets/fonts/AvenirNextCyr-Light.eot");
+  src: local("../assets/fonts/Avenir Next Cyr Light"),
+    local("AvenirNextCyr-Light"),
+    url("../assets/fonts/AvenirNextCyr-Light.eot") format("embedded-opentype"),
+    url("../assets/fonts/AvenirNextCyr-Light.woff") format("woff"),
+    url("../assets/fonts/AvenirNextCyr-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next Cyr";
+  src: url("../assets/fonts/AvenirNextCyr-Regular.eot");
+  src: local("Avenir Next Cyr Regular"), local("AvenirNextCyr-Regular"),
+    url("../assets/fonts/AvenirNextCyr-Regular.eot") format("embedded-opentype"),
+    url("../assets/fonts/AvenirNextCyr-Regular.woff") format("woff"),
+    url("../assets/fonts/AvenirNextCyr-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir Next Cyr";
+  src: url("../assets/fonts/AvenirNextCyr-Medium.eot");
+  src: local("Avenir Next Cyr Medium"), local("AvenirNextCyr-Medium"),
+    url("../assets/fonts/AvenirNextCyr-Medium.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/fonts/AvenirNextCyr-Medium.woff") format("woff"),
+    url("../assets/fonts/AvenirNextCyr-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  display: none;
+}
+
+body {
+  background-color: $gray-100;
+  font-family: "Avenir Next Cyr", sans-serif;
+}
+
+#container {
+  background-color: $white;
+  overflow-x: hidden;
+
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: clamp(42px, 4vw, 70px);
+  color: #9e1651;
+}
+h1,
+h5 {
+  font-weight: 500;
+}
+
+@include media-breakpoint-down(sm) {
+  h1 {
+    font-size: 30px;
+  }
+}
+
+.bg-pink {
+  background-color: $bg-pink;
+}
+
+.bg-blue {
+  background-color: $bg-blue;
+}
+
+/***********
+* HEADER *
+***********/
+
+header {
+  font-size: clamp(18px, 2vw, 27px);
+  z-index: $zindex-fixed;
+  transition: all 0.2s ease;
+  img {
+    max-width: 300px;
+    width: 90%;
+    top: 20px;
+    right: -20px;
+  }
+
+  .btn {
+    font-size: clamp(18px, 2vw, 27px);
+    white-space: nowrap;
+  }
+  .switcher {
+    span {
+      font-size: clamp(16px, 1.8vw, 24px);
+      color: $nav-link-color;
+      &[data-lang] {
+        cursor: pointer;
+        display: block;
+        width: 30px;
+        height: 30px;
+        margin: 0 2px;
+        transition: all 0.25s ease-in-out;
+      }
+      &.active {
+        color: #000;
+        font-weight: 700;
+      }
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    .nav-horizontal,
+    .btn,
+    .switcher {
+      display: none;
+    }
+  }
+}
+.custom-header-bg {
+  background-color: rgb(250 250 250 / 0.9);
+  box-shadow: 0px 1px 3px rgb(0 0 0 / 0.1);
+}
+
+// --> SIDEBAR
+.sidebar-wrapper {
+  position: fixed;
+  top: 0;
+  right: -120%;
+  width: 100%;
+  z-index: 1100;
+  height: 100vh;
+  background: rgb(0 0 0 / 0.7);
+  transition: all 0.4s ease;
+}
+.sidebar-wrapper.show {
+  right: 0;
+}
+.sidebar {
+  background: $bg-blue;
+
+  .material-icons {
+    font-size: 36px;
+    cursor: pointer;
+  }
+  a {
+    font-size: clamp(24px, 2vw, 36px);
+  }
+}
+
+/***********
+* SECTIONS*
+***********/
+
+//--> Element Card
+
+$bg-btn-red-hover: #ce1464;
+$bg-btn-red: #e81772;
+$color-card-text: #797689;
+$color-card-blue: #30439f;
+
+@mixin cardTitle() {
+  font-size: clamp(16px, 1.5vw, 30px);
+  text-wrap: balance;
+}
+
+@mixin cardImage() {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+@mixin cardParagraph {
+  max-width: 90%;
+  font-size: clamp(16px, 1.5vw, 24px);
+  line-height: 1.3;
+}
+
+@mixin btnElement($color: $bg-btn-red) {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  border: 1px solid $color;
+  border-radius: 12px;
+  top: -10px;
+  left: -10px;
+  z-index: 0;
+}
+
+@mixin truncate($quantity: 3) {
+  display: -webkit-box;
+  -webkit-line-clamp: $quantity;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+//--> SECTION BANNER
+
+#banner {
+  min-height: 100vh;
+  .banner-block {
+    position: relative;
+  }
+  .b-bg {
+    background-image: url("../assets/images/banner/bg-banner.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+  }
+  .banner-block-text {
+    position: absolute;
+    top: 40%;
+    right: -18%;
+    width: 80%;
+    text-wrap: balance;
+    z-index: 2;
+    p {
+      font-size: clamp(18px, 2vw, 36px);
+      width: 85%;
+      text-wrap: auto;
+    }
+  }
+  .flag-position {
+    top: 15%;
+    left: 10%;
+  }
+  .hello-position {
+    top: 67%;
+    right: 0;
+    width: 100px;
+  }
+  .wrapper-form {
+    position: absolute;
+    top: 20%;
+    left: 18%;
+    width: 75%;
+  }
+
+  @include media-breakpoint-down(lg) {
+    .banner-block {
+      position: static;
+    }
+    .order-btn-mob {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% 50%;
+      width: 75%;
+      z-index: 10;
+    }
+    .flag-position {
+      top: 50%;
+      left: 7%;
+      width: 50px;
+      z-index: 0;
+    }
+    .hello-position {
+      top: 65%;
+      right: 0;
+      width: 80px;
+    }
+    .b-bg {
+      background-image: url("../assets/images/banner/bg-banner-mob.png");
+      background-position: center bottom;
+    }
+    .banner-block-text {
+      top: 20%;
+      width: auto;
+      left: 50%;
+      translate: -50% 20%;
+      text-wrap: auto;
+    }
+  }
+}
+#order-form,
+#order-form-2 {
+  width: 100%;
+  background: #fff;
+  h2 {
+    font-size: clamp(24px, 2vw, 40px);
+    color: $nav-link-color;
+  }
+  label,
+  input {
+    font-size: clamp(18px, 2vw, 24px);
+  }
+  button {
+    font-size: clamp(14px, 1.5vw, 24px);
+    white-space: nowrap;
+  }
+  input {
+    background-color: #f0f6ff;
+    border: 0;
+    outline: 0;
+  }
+  ::placeholder {
+    color: #6783ab;
+  }
+  a {
+    color: $nav-link-color;
+    font-size: clamp(10px, 1.5vw, 17px);
+  }
+}
+
+.toggle-vis-pass {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  translate: 0 -50%;
+  cursor: pointer;
+  color: #395f82;
+}
+// Модальное окно для моб форсы запроса
+.modal-dialog {
+  top: 20%;
+}
+
+//--> SECTION PRICE
+
+#prices {
+  .card {
+    width: 25%;
+    .card-title {
+      @include cardTitle;
+    }
+    img {
+      @include cardImage;
+    }
+  }
+  a.btn {
+    position: relative;
+    transition: none;
+    font-size: clamp(20px, 1.5vw, 36px);
+  }
+
+  @include media-breakpoint-down(lg) {
+    .card-mob {
+      .card-title {
+        font-size: clamp(24px, 2vw, 36px);
+      }
+    }
+  }
+  @include media-breakpoint-only(md) {
+    .card {
+      width: 70%;
+      margin: 0 auto;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    .card {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    a.btn-primary::before {
+      @include btnElement($color: var(--bs-btn-bg));
+    }
+    a.btn-primary:hover::before {
+      border: 1px solid var(--bs-btn-hover-bg);
+    }
+  }
+}
+
+.card-list {
+  list-style: none;
+  padding: 0;
+  li {
+    color: $color-card-text;
+    font-size: clamp(14px, 1.3vw, 36px);
+  }
+  i {
+    color: #54d779;
+    font-size: clamp(24px, 1.3vw, 36px);
+  }
+}
+
+.btn-accent {
+  background-color: $bg-btn-red;
+  color: #fff;
+  @include media-breakpoint-up(lg) {
+    &::before {
+      @include btnElement;
+    }
+    &:hover::before {
+      border: 1px solid $bg-btn-red-hover;
+    }
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: $bg-btn-red-hover;
+  }
+}
+
+.card-mob {
+  .card-price {
+    font-size: clamp(24px, 5vw, 48px);
+    color: #84aff9;
+  }
+  .bg-pink {
+    .card-price {
+      color: #f867a6;
+    }
+  }
+}
+
+//--> SECTION BLOG
+
+#blog {
+  .gap-3-percent {
+    gap: 5%;
+  }
+  a.card {
+    width: 23%;
+    transition: scale 0.4s ease-in-out;
+    &:hover,
+    &:active {
+      scale: 1.05;
+    }
+  }
+  .card {
+    .card-body {
+      padding-bottom: 50px;
+    }
+    .card-title {
+      @include cardTitle;
+    }
+    img {
+      @include cardImage;
+    }
+    .info {
+      font-size: clamp(14px, 1.5vw, 20px);
+      color: $color-card-blue;
+    }
+    p {
+      @include cardParagraph;
+      color: $color-card-text;
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    .card {
+      width: 100%;
+    }
+  }
+  .truncate-multiline {
+    @include truncate;
+  }
+}
+#blog {
+  .carousel {
+    width: 90%;
+    margin: 0 auto;
+    .carousel-indicators {
+      button {
+        background-clip: border-box;
+        border: 0;
+        border-radius: 50%;
+        width: 9px;
+        height: 9px;
+        background-color: #90b7fa;
+      }
+      button.active {
+        background-color: #4d8bf4;
+      }
+    }
+  }
+  @include media-breakpoint-only(md) {
+    .carousel {
+      width: 70%;
+    }
+  }
+}
+
+//--> SECTION QUESTIONS
+
+#questions {
+  .accordion-button {
+    background-color: #e5f0ff;
+    color: #2c2c2c;
+    font-size: clamp(18px, 1.5vw, 30px);
+    padding-left: 50px;
+    &::after {
+      content: "+";
+      background-image: $accordion-button-icon;
+      transform: none;
+      width: 31px;
+      height: 31px;
+      font-size: 31px;
+      line-height: 1;
+      color: $bg-btn-red;
+    }
+    &[aria-expanded="true"]::after {
+      content: "-";
+    }
+    &::before {
+      content: "";
+      background-image: $accordion-button-icon;
+      width: 17px;
+      height: 17px;
+      background-color: #ffb7d6;
+      top: 50%;
+      left: 30px;
+      translate: -50% -50%;
+      border-radius: 50%;
+      position: absolute;
+    }
+  }
+  .accordion {
+    width: 75%;
+  }
+  @include media-breakpoint-down(sm) {
+    .accordion {
+      width: 90%;
+    }
+  }
+}
+
+//--> SECTION REVIEWS
+
+#reviews {
+  .carousel {
+    width: 75%;
+    background-image: url("../assets/images/reviews/bg-reviews.png");
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 5% 8% 7%;
+    .carousel-indicators {
+      position: relative;
+      top: 10px;
+      button {
+        width: clamp(9px, 1.5vw, 17px);
+        height: clamp(9px, 1.5vw, 17px);
+        border-radius: 50%;
+        background-color: $bg-btn-red;
+      }
+    }
+    .card {
+      color: $color-card-blue;
+      .card-title {
+        @include cardTitle;
+        text-align: left;
+      }
+      .card-text {
+        @include cardParagraph;
+      }
+      .info {
+        @include cardParagraph;
+        text-align: left;
+      }
+      .truncate-multiline {
+        @include truncate(4);
+      }
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    .carousel {
+      width: 60%;
+      padding: 8% 8% 7%;
+      background-image: url("../assets/images/reviews/bg-reviews-mob.png");
+      .truncate-multiline {
+        @include truncate(auto);
+      }
+      .card {
+        .card-title,
+        .info {
+          text-align: center;
+        }
+        .truncate-multiline {
+          @include truncate(100);
+        }
+      }
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    .carousel {
+      width: 90%;
+      .carousel-indicators {
+        top: 0;
+      }
+    }
+  }
+  .carousel-control-arr {
+    bottom: unset;
+    top: 35%;
+    translate: 0 35%;
+  }
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    filter: invert(0);
+    width: 50px;
+    height: 50px;
+  }
+  .carousel-control-prev-icon {
+    background-image: url("../assets/images/reviews/prev.png");
+  }
+  .carousel-control-next-icon {
+    background-image: url("../assets/images/reviews/next.png");
+  }
+}
+
+/***********
+* FOOTER *
+***********/
+
+footer {
+  padding-bottom: 40px;
+  .footer-container {
+    background-image: url("../assets/images/bg-footer.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    padding: 30px 5%;
+    img {
+      width: 80%;
+    }
+    .nav-link {
+      text-decoration: none;
+      color: $nav-link-color;
+    }
+    nav,
+    p {
+      font-size: clamp(16px, 1.5vw, 24px);
+      a {
+        color: $nav-link-color;
+        text-decoration: none;
+      }
+    }
+    nav {
+      a {
+        font-size: clamp(16px, 1.5vw, 24px);
+        white-space: nowrap;
+      }
+    }
+  }
+}
